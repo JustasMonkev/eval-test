@@ -1,0 +1,13 @@
+description: "Soshie eval"
+
+prompts:
+  - file://prompts/soshie-prompt-v1.md
+  - file://prompts/soshie-prompt-v2.md
+
+providers:
+  - id: openai:gpt-5-nano
+    config:
+      temperature: 0
+      apiKeyEnvar: OPENAI_API_KEY
+
+tests: file://index.ts

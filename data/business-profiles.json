@@ -1,0 +1,54 @@
+[
+  {
+    "id": "biz_001",
+    "business_name": "Sunrise Bakery",
+    "industry": "Food & Beverage",
+    "description": "Family-owned artisan bakery specializing in sourdough bread and French pastries. Located in downtown Portland, OR. In business for 12 years.",
+    "tone": "Warm, friendly, community-focused",
+    "target_audience": "Local food lovers, families, brunch enthusiasts",
+    "current_promotion": null,
+    "notes": "Anniversary coming up next month. Owner mentioned wanting to do something special but hasn't decided what yet."
+  },
+  {
+    "id": "biz_002",
+    "business_name": "TechFlow Solutions",
+    "industry": "B2B SaaS",
+    "description": "Project management software for remote teams. Founded in 2021. Serves 2,000+ companies globally.",
+    "tone": "Professional, helpful",
+    "target_audience": "CTOs, engineering managers, remote team leads",
+    "current_promotion": "Free 30-day trial, no credit card required",
+    "recent_update": "Launched new AI-powered task prioritization feature last week"
+  },
+  {
+    "id": "biz_003",
+    "business_name": "Glow & Grace Skincare",
+    "industry": "Beauty & Wellness",
+    "description": "Clean beauty brand offering vegan, cruelty-free skincare products. Ships nationwide from Austin, TX.",
+    "tone": null,
+    "target_audience": "Health-conscious women 25-45",
+    "current_promotion": "Buy 2 serums, get 1 free through end of month",
+    "notes": "Brand is new, still figuring out voice. Previous posts have been inconsistent."
+  },
+  {
+    "id": "biz_004",
+    "business_name": "Martinez Legal Group",
+    "industry": "Legal Services",
+    "description": "Immigration law firm serving the Dallas-Fort Worth area. 15 years of experience. Bilingual team (English/Spanish).",
+    "tone": "Trustworthy, compassionate, professional",
+    "target_audience": "Immigrants and families navigating visa/citizenship process",
+    "current_promotion": null,
+    "recent_update": null,
+    "notes": "Want to post more but unsure what content is appropriate for a law firm on social media."
+  },
+  {
+    "id": "biz_005",
+    "business_name": "FitCore Gym",
+    "industry": "Fitness",
+    "description": "24/7 gym with personal training and group classes. Three locations in Miami.",
+    "tone": "Motivational, energetic",
+    "target_audience": "Fitness beginners to enthusiasts, busy professionals",
+    "current_promotion": null,
+    "recent_update": "Just added outdoor training area at Brickell location",
+    "problem": "January rush is coming, expecting overcrowding. Need to manage member expectations."
+  }
+]

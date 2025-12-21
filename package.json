@@ -1,0 +1,21 @@
+{
+  "name": "soshie-eval",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "eval": "promptfoo eval --grader openai:gpt-5-mini --max-concurrency 16 --output results.json",
+    "test-case-count": " npx ts-node index.ts"
+  },
+  "dependencies": {
+    "promptfoo": "^0.120.5"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
+
