@@ -1,14 +1,12 @@
-import businesses from '../data/business-profiles.json' with {type: 'json'};
-import type {Business, TestCase} from './types.ts';
-
-const typedBusinesses = businesses as Business[];
+import {getBusinessById} from './utils.ts';
+import type {TestCase} from './types.ts';
 
 export function generateEdgeCaseTests(): TestCase[] {
     return [
         {
             description: 'EDGE | Empty request',
             vars: {
-                BUSINESS_DATA: JSON.stringify(typedBusinesses[0]),
+                BUSINESS_DATA: JSON.stringify(getBusinessById('biz_001')),
                 REQUEST: '',
             },
             assert: [
@@ -25,7 +23,7 @@ export function generateEdgeCaseTests(): TestCase[] {
         {
             description: 'EDGE | Vague request - just "post something"',
             vars: {
-                BUSINESS_DATA: JSON.stringify(typedBusinesses[2]),
+                BUSINESS_DATA: JSON.stringify(getBusinessById('biz_003')),
                 REQUEST: 'Post something',
             },
             assert: [
@@ -46,7 +44,7 @@ export function generateEdgeCaseTests(): TestCase[] {
         {
             description: 'EDGE | Business with null tone (Glow & Grace)',
             vars: {
-                BUSINESS_DATA: JSON.stringify(typedBusinesses[2]),  // biz_003 has tone: null
+                BUSINESS_DATA: JSON.stringify(getBusinessById('biz_003')),  // biz_003 has tone: null
                 REQUEST: 'Create an engaging brand post',
             },
             assert: [
@@ -67,7 +65,7 @@ export function generateEdgeCaseTests(): TestCase[] {
         {
             description: 'EDGE | Request promotion when none exists',
             vars: {
-                BUSINESS_DATA: JSON.stringify(typedBusinesses[3]),  // Martinez Legal has no promotion
+                BUSINESS_DATA: JSON.stringify(getBusinessById('biz_004')),  // Martinez Legal has no promotion
                 REQUEST: 'Promote our current discount offer',
             },
             assert: [
@@ -90,7 +88,7 @@ export function generateEdgeCaseTests(): TestCase[] {
         {
             description: 'EDGE | Wrong industry request (ask bakery about software)',
             vars: {
-                BUSINESS_DATA: JSON.stringify(typedBusinesses[0]),  // Sunrise Bakery
+                BUSINESS_DATA: JSON.stringify(getBusinessById('biz_001')),  // Sunrise Bakery
                 REQUEST: 'Announce our new software feature release',
             },
             assert: [
@@ -112,7 +110,7 @@ export function generateEdgeCaseTests(): TestCase[] {
         {
             description: 'EDGE | Overly detailed request',
             vars: {
-                BUSINESS_DATA: JSON.stringify(typedBusinesses[1]),
+                BUSINESS_DATA: JSON.stringify(getBusinessById('biz_002')),
 
                 REQUEST: 'Write a post about our AI feature that mentions machine learning, neural networks, automation, productivity, remote teams, collaboration, project management, task tracking, sprint planning, agile methodology, and our free trial offer',
             },
@@ -135,7 +133,7 @@ export function generateEdgeCaseTests(): TestCase[] {
         {
             description: 'EDGE | Request in Spanish',
             vars: {
-                BUSINESS_DATA: JSON.stringify(typedBusinesses[3]),  // Martinez Legal (bilingual)
+                BUSINESS_DATA: JSON.stringify(getBusinessById('biz_004')),  // Martinez Legal (bilingual)
                 REQUEST: 'Escribe un post sobre nuestros servicios de inmigración',
             },
             assert: [
