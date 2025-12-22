@@ -57,7 +57,7 @@ npm run eval
 ```
 
 This executes promptfoo with:
-- GPT-5-mini as the grader
+- GPT-5-nano as the provider
 - 16 concurrent evaluations
 - Results output to `results.json`
 
