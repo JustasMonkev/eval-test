@@ -1,5 +1,6 @@
 import businesses from '../data/business-profiles.json' with {type: 'json'};
 import type {Business, BusinessScenario, TestCase} from './types.ts';
+import {getBusinessJSON} from './utils.ts';
 
 const typedBusinesses = businesses as Business[];
 
@@ -211,7 +212,7 @@ export function generateContentTests(): TestCase[] {
             tests.push({
                 description: `CONTENT | ${config.name} | ${scenario.request}`,
                 vars: {
-                    BUSINESS_DATA: JSON.stringify(business),
+                    BUSINESS_DATA: getBusinessJSON(business.id),
                     REQUEST: scenario.request,
                 },
                 assert: scenario.assertions,
