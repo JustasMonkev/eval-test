@@ -1,7 +1,5 @@
-import businesses from '../data/business-profiles.json' with {type: 'json'};
-import type {Business, BusinessScenario, TestCase} from './types.ts';
-
-const typedBusinesses = businesses as Business[];
+import {getBusinessById} from './utils.ts';
+import type {BusinessScenario, TestCase} from './types.ts';
 
 const businessScenarios: Record<string, BusinessScenario> = {
     // Sunrise Bakery - has anniversary, null promotion
@@ -203,9 +201,8 @@ const businessScenarios: Record<string, BusinessScenario> = {
 export function generateContentTests(): TestCase[] {
     const tests: TestCase[] = [];
 
-    for (const business of typedBusinesses) {
-        const config = businessScenarios[business.id];
-        if (!config) continue;
+    for (const [businessId, config] of Object.entries(businessScenarios)) {
+        const business = getBusinessById(businessId);
 
         for (const scenario of config.scenarios) {
             tests.push({
