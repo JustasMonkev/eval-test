@@ -11,3 +11,15 @@ export function getBusinessById(id: string): Business {
     }
     return business;
 }
+
+const businessJsonMap = new Map<string, string>();
+
+export function getBusinessJSON(id: string): string {
+    if (businessJsonMap.has(id)) {
+        return businessJsonMap.get(id)!;
+    }
+    const business = getBusinessById(id);
+    const json = JSON.stringify(business);
+    businessJsonMap.set(id, json);
+    return json;
+}

@@ -1,4 +1,4 @@
-import {getBusinessById} from './utils.ts';
+import {getBusinessJSON} from './utils.ts';
 import type {BusinessScenario, TestCase} from './types.ts';
 
 const businessScenarios: Record<string, BusinessScenario> = {
@@ -202,13 +202,11 @@ export function generateContentTests(): TestCase[] {
     const tests: TestCase[] = [];
 
     for (const [businessId, config] of Object.entries(businessScenarios)) {
-        const business = getBusinessById(businessId);
-
         for (const scenario of config.scenarios) {
             tests.push({
                 description: `CONTENT | ${config.name} | ${scenario.request}`,
                 vars: {
-                    BUSINESS_DATA: JSON.stringify(business),
+                    BUSINESS_DATA: getBusinessJSON(businessId),
                     REQUEST: scenario.request,
                 },
                 assert: scenario.assertions,
