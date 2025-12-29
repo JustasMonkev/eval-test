@@ -203,12 +203,13 @@ export function generateContentTests(): TestCase[] {
 
     for (const [businessId, config] of Object.entries(businessScenarios)) {
         const business = getBusinessById(businessId);
+        const businessJson = JSON.stringify(business);
 
         for (const scenario of config.scenarios) {
             tests.push({
                 description: `CONTENT | ${config.name} | ${scenario.request}`,
                 vars: {
-                    BUSINESS_DATA: JSON.stringify(business),
+                    BUSINESS_DATA: businessJson,
                     REQUEST: scenario.request,
                 },
                 assert: scenario.assertions,
